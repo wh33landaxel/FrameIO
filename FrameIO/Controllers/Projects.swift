@@ -10,6 +10,7 @@ import UIKit
 
 class Projects: UIViewController {
     @IBOutlet weak var projectsTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var projects: [Project] = []
     var teams: [Team] = []
     
@@ -24,7 +25,9 @@ class Projects: UIViewController {
     }
     
     func getProjects() {
+        
         NetworkLayer.request(router: .getUserProjects, completion: { (result:Result<ProjectsAndTeams, Error>) in
+            self.activityIndicator.startAnimating()
             
             switch result {
             case .success(let projectsAndTeams):
@@ -74,9 +77,11 @@ class Projects: UIViewController {
                 }
                 
                 
-                
+                //Load data into table view
                 DispatchQueue.main.async {
                     self.projectsTableView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.projectsTableView.alpha = 1
                 }
                 
             case .failure(let error):
