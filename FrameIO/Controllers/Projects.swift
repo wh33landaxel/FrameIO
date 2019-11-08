@@ -34,6 +34,7 @@ class Projects: UIViewController {
                 
                 self.projects = projectData
                 
+                //Add team name attribute to projects since they are missing in the project payload
                 if let teamData = projectsAndTeams.teams {
                     self.teams = teamData
                 }
@@ -45,6 +46,7 @@ class Projects: UIViewController {
                     self.projects[index].relationships.team.attributes = teamDict[self.projects[index].relationships.team.id]?.attributes ?? self.projects[index].relationships.team.attributes
                 }
                 
+                //Sort projects by update time
                 let dateFormatter = ISO8601DateFormatter()
                 dateFormatter.formatOptions =  [.withInternetDateTime, .withFractionalSeconds]
 
@@ -57,6 +59,7 @@ class Projects: UIViewController {
                     return project1UpdateTime.compare(project2UpdateTime) == .orderedDescending
                 })
                 
+                //Initialize Team Projects Variable to separate projects by team
                 for project in self.projects {
                     
                     guard let teamName = project.relationships.team.attributes?.name else {
@@ -116,8 +119,17 @@ extension Projects: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = projects[indexPath.row].attributes.name
-        cell.detailTextLabel?.text = projects[indexPath.row].relationships.team.attributes?.name
+        
+        if sectionNames.first == "Recents" && indexPath.section == 0 {
+            cell.textLabel?.text = self.projects[indexPath.row].attributes.name
+            cell.detailTextLabel?.text = self.projects[indexPath.row].relationships.team.attributes?.name
+        } else {
+            let teamProject = teamProjects[sectionNames[indexPath.section]]
+            
+            cell.textLabel?.text = teamProject?[indexPath.row].attributes.name
+            cell.detailTextLabel?.text = ""
+        }
+
         return cell
     }
     
