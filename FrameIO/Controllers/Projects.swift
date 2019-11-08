@@ -70,6 +70,8 @@ class Projects: UIViewController {
                     }
                 }
                 
+                
+                
                 DispatchQueue.main.async {
                     self.projectsTableView.reloadData()
                 }
@@ -86,21 +88,30 @@ extension Projects: UITableViewDelegate, UITableViewDataSource {
         
     func numberOfSections(in tableView: UITableView) -> Int {
         var sectionCount = 0
-        sectionCount = sectionCount + ((projects.count > 5) ? 1 + self.teams.count : self.teams.count)
-        return projects.count > 5 ? 2 : 1
+        let hasRecents = projects.count > 5
+        sectionCount = sectionCount + ((hasRecents) ? 1 + self.teamProjects.keys.count : self.teamProjects.keys.count)
+        
+        if hasRecents {
+            sectionNames = ["Recents"]
+            sectionNames.append(contentsOf: self.teamProjects.keys)
+        } else {
+            sectionNames.append(contentsOf: self.teamProjects.keys)
+        }
+        
+        return sectionCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if tableView.numberOfSections == 2 {
-            if section == 0 {
-                return 5
+        if sectionNames.first == "Recents" && section == 0 {
+            if self.projects.count < 10 && self.projects.count > 5 {
+                return self.projects.count - 5
             } else {
-                return projects.count - 5
+                return 5
             }
+        } else {
+            return teamProjects[sectionNames[section]]?.count ?? 0
         }
-        
-        return projects.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,16 +122,7 @@ extension Projects: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if tableView.numberOfSections == 2 {
-            
-            if section == 0 {
-                return "Recent Projects"
-            } else {
-                return "Projects"
-            }
-        } else {
-            return "Projects"
-        }
+        return sectionNames[section]
     }
 }
 
