@@ -11,6 +11,8 @@ import UIKit
 class Projects: UIViewController {
     @IBOutlet weak var projectsTableView: UITableView!
     var projects: [Project] = []
+    var teams: [Team] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "PROJECTS"
@@ -18,19 +20,31 @@ class Projects: UIViewController {
     }
     
     func getProjects() {
-        NetworkLayer.request(router: .getUserProjects, completion: { (result:Result<[String:[Project]], Error>) in
+        NetworkLayer.request(router: .getUserProjects, completion: { (result:Result<ProjectsAndTeams, Error>) in
             
             switch result {
-            case .success(let projects):
-                guard let projectData = projects["data"] else {
+            case .success(let projectsAndTeams):
+                guard let projectData = projectsAndTeams.projects else {
                     return
                 }
                 
                 self.projects = projectData
                 
+                if let teamData = projectsAndTeams.teams {
+                    self.teams = teamData
+                }
+                
+                let teamDict = Dictionary(uniqueKeysWithValues: self.teams.map({team in (team.id, team)}))
+                
+                for index in 0..<self.projects.count {
+                    
+                    self.projects[index].relationships.team.attributes = teamDict[self.projects[index].relationships.team.id]?.attributes ?? self.projects[index].relationships.team.attributes
+                }
+                                
                 DispatchQueue.main.async {
                     self.projectsTableView.reloadData()
                 }
+                
             case .failure(let error):
                 print(error)
             }
@@ -61,6 +75,7 @@ extension Projects: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = projects[indexPath.row].attributes.name
+        cell.detailTextLabel?.text = projects[indexPath.row].relationships.team.attributes?.name
         return cell
     }
     

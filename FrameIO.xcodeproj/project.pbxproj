@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5179FD52375A7B900201236 /* ProjectsAndTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5179FD42375A7B900201236 /* ProjectsAndTeams.swift */; };
 		F59687812374DC7D00D88CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59687802374DC7D00D88CA1 /* AppDelegate.swift */; };
 		F59687852374DC7D00D88CA1 /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59687842374DC7D00D88CA1 /* Projects.swift */; };
 		F59687882374DC7D00D88CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59687862374DC7D00D88CA1 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5179FD42375A7B900201236 /* ProjectsAndTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsAndTeams.swift; sourceTree = "<group>"; };
 		F596877D2374DC7D00D88CA1 /* FrameIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrameIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59687802374DC7D00D88CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F59687842374DC7D00D88CA1 /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				F5F957A22375101A0006FA72 /* Project.swift */,
 				F5F957A6237510310006FA72 /* Team.swift */,
+				F5179FD42375A7B900201236 /* ProjectsAndTeams.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				F5F957A123750BA10006FA72 /* Router.swift in Sources */,
 				F59687812374DC7D00D88CA1 /* AppDelegate.swift in Sources */,
 				F5F957A7237510310006FA72 /* Team.swift in Sources */,
+				F5179FD52375A7B900201236 /* ProjectsAndTeams.swift in Sources */,
 				F596878B2374DC7D00D88CA1 /* FrameIO.xcdatamodeld in Sources */,
 				F5F957A32375101A0006FA72 /* Project.swift in Sources */,
 			);

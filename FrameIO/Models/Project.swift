@@ -10,7 +10,7 @@ import Foundation
 
 struct Project: Codable {
     
-    let relationships: Relationships
+    var relationships: Relationships
     let type: String
     let id: String
     let attributes : ProjectAttributes
@@ -25,7 +25,7 @@ struct Project: Codable {
 
 struct Relationships: Codable {
     
-    let team: Team
+    var team: Team
     
     enum CodingKeys: String, CodingKey {
         case team

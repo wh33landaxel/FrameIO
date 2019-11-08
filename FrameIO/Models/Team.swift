@@ -12,7 +12,7 @@ struct Team: Codable {
     
     let id: String
     let type: String
-    let attributes: Attributes?
+    var attributes: Attributes?
     
     enum CodingKeys: String, CodingKey {
         case id
