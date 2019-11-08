@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Projects" customModule="FrameIO" customModuleProvider="target">
             <connections>
+                <outlet property="projectsTableView" destination="wQE-AZ-g1i" id="NX4-0N-PYj"/>
                 <outlet property="view" destination="38i-6X-aZ3" id="n2F-LU-Lcx"/>
             </connections>
         </placeholder>
@@ -18,15 +19,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life Lessons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GiK-pS-hDy">
-                    <rect key="frame" x="160" y="113" width="95" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wQE-AZ-g1i">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="he3-nF-olU"/>
+                        <outlet property="delegate" destination="-1" id="gV8-3X-yGb"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="wQE-AZ-g1i" firstAttribute="leading" secondItem="S83-rd-iUE" secondAttribute="leading" id="3OW-Z9-PGW"/>
+                <constraint firstItem="S83-rd-iUE" firstAttribute="bottom" secondItem="wQE-AZ-g1i" secondAttribute="bottom" id="Bhn-uA-5F8"/>
+                <constraint firstItem="S83-rd-iUE" firstAttribute="trailing" secondItem="wQE-AZ-g1i" secondAttribute="trailing" id="NNW-W2-Sst"/>
+                <constraint firstItem="wQE-AZ-g1i" firstAttribute="top" secondItem="S83-rd-iUE" secondAttribute="top" id="ehw-dI-c4f"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="S83-rd-iUE"/>
             <point key="canvasLocation" x="39" y="35"/>
         </view>

@@ -11,6 +11,16 @@ import Foundation
 struct Project: Codable {
     
     let relationships: Relationships
+    let type: String
+    let id: Int
+    let projectAttributes : ProjectAttributes
+    
+    enum Project: String, CodingKey {
+        case relationships
+        case type
+        case id
+        case projectAttributes = "attributes"
+    }
 }
 
 struct Relationships: Codable {
@@ -19,5 +29,17 @@ struct Relationships: Codable {
     
     enum Relationships: String, CodingKey {
         case team
+    }
+}
+
+struct ProjectAttributes: Codable {
+    
+    let updatedAt: String
+    let name: String
+    
+    enum ProjectAttributes: String, CodingKey {
+        
+        case updatedAt = "updated_at"
+        case name
     }
 }
