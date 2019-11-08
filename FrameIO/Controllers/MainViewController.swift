@@ -8,9 +8,11 @@
 
 import UIKit
 
-class Projects: UIViewController {
+class MainViewController: UIViewController {
+
     @IBOutlet weak var projectsTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var projects: [Project] = []
     var teams: [Team] = []
     
@@ -92,7 +94,7 @@ class Projects: UIViewController {
     }
 }
 
-extension Projects: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
     func numberOfSections(in tableView: UITableView) -> Int {
         var sectionCount = 0

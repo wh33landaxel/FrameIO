@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		F5179FD52375A7B900201236 /* ProjectsAndTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5179FD42375A7B900201236 /* ProjectsAndTeams.swift */; };
 		F59687812374DC7D00D88CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59687802374DC7D00D88CA1 /* AppDelegate.swift */; };
-		F59687852374DC7D00D88CA1 /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59687842374DC7D00D88CA1 /* Projects.swift */; };
+		F59687852374DC7D00D88CA1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59687842374DC7D00D88CA1 /* MainViewController.swift */; };
 		F59687882374DC7D00D88CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59687862374DC7D00D88CA1 /* Main.storyboard */; };
 		F596878B2374DC7D00D88CA1 /* FrameIO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F59687892374DC7D00D88CA1 /* FrameIO.xcdatamodeld */; };
 		F596878D2374DC7E00D88CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F596878C2374DC7E00D88CA1 /* Assets.xcassets */; };
 		F59687902374DC7E00D88CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F596878E2374DC7E00D88CA1 /* LaunchScreen.storyboard */; };
 		F596879B2374DC7E00D88CA1 /* FrameIOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596879A2374DC7E00D88CA1 /* FrameIOTests.swift */; };
 		F59687A62374DC7E00D88CA1 /* FrameIOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59687A52374DC7E00D88CA1 /* FrameIOUITests.swift */; };
-		F5F9579A237500F10006FA72 /* Projects.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F95799237500F10006FA72 /* Projects.xib */; };
+		F5F9579A237500F10006FA72 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F95799237500F10006FA72 /* MainViewController.xib */; };
 		F5F9579F23750B450006FA72 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9579E23750B450006FA72 /* NetworkLayer.swift */; };
 		F5F957A123750BA10006FA72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F957A023750BA10006FA72 /* Router.swift */; };
 		F5F957A32375101A0006FA72 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F957A22375101A0006FA72 /* Project.swift */; };
@@ -47,7 +47,7 @@
 		F5179FD42375A7B900201236 /* ProjectsAndTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsAndTeams.swift; sourceTree = "<group>"; };
 		F596877D2374DC7D00D88CA1 /* FrameIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrameIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59687802374DC7D00D88CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F59687842374DC7D00D88CA1 /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
+		F59687842374DC7D00D88CA1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F59687872374DC7D00D88CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F596878A2374DC7D00D88CA1 /* FrameIO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FrameIO.xcdatamodel; sourceTree = "<group>"; };
 		F596878C2374DC7E00D88CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		F59687A12374DC7E00D88CA1 /* FrameIOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrameIOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59687A52374DC7E00D88CA1 /* FrameIOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameIOUITests.swift; sourceTree = "<group>"; };
 		F59687A72374DC7E00D88CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5F95799237500F10006FA72 /* Projects.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Projects.xib; sourceTree = "<group>"; };
+		F5F95799237500F10006FA72 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		F5F9579E23750B450006FA72 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		F5F957A023750BA10006FA72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F5F957A22375101A0006FA72 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 		F59687B42374DF1C00D88CA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F59687842374DC7D00D88CA1 /* Projects.swift */,
-				F5F95799237500F10006FA72 /* Projects.xib */,
+				F59687842374DC7D00D88CA1 /* MainViewController.swift */,
+				F5F95799237500F10006FA72 /* MainViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				F5F957A9237518260006FA72 /* .gitignore in Resources */,
 				F59687902374DC7E00D88CA1 /* LaunchScreen.storyboard in Resources */,
 				F596878D2374DC7E00D88CA1 /* Assets.xcassets in Resources */,
-				F5F9579A237500F10006FA72 /* Projects.xib in Resources */,
+				F5F9579A237500F10006FA72 /* MainViewController.xib in Resources */,
 				F5F957B223751CD70006FA72 /* ProjectTableViewCell.xib in Resources */,
 				F59687882374DC7D00D88CA1 /* Main.storyboard in Resources */,
 			);
@@ -331,7 +331,7 @@
 			files = (
 				F5F9579F23750B450006FA72 /* NetworkLayer.swift in Sources */,
 				F5F957B123751CD70006FA72 /* ProjectTableViewCell.swift in Sources */,
-				F59687852374DC7D00D88CA1 /* Projects.swift in Sources */,
+				F59687852374DC7D00D88CA1 /* MainViewController.swift in Sources */,
 				F5F957A123750BA10006FA72 /* Router.swift in Sources */,
 				F59687812374DC7D00D88CA1 /* AppDelegate.swift in Sources */,
 				F5F957A7237510310006FA72 /* Team.swift in Sources */,

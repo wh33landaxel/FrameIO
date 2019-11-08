@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        navigationController = UINavigationController(rootViewController: Projects())
+        navigationController = UINavigationController(rootViewController: MainViewController())
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = false
         
