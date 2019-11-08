@@ -36,7 +36,7 @@ enum Router {
     var parameters: [URLQueryItem] {
         switch self {
         case .getUserProjects:
-            return [URLQueryItem(name:"include", value:"team")]
+            return []
         }
     }
     

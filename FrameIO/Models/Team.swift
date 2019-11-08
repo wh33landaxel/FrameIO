@@ -10,9 +10,9 @@ import Foundation
 
 struct Team: Codable {
     
-    let id: Int
+    let id: String
     let type: String
-    let attributes: Attributes
+    let attributes: Attributes?
     
     enum CodingKeys: String, CodingKey {
         case id

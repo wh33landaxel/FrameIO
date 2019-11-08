@@ -12,14 +12,14 @@ struct Project: Codable {
     
     let relationships: Relationships
     let type: String
-    let id: Int
-    let projectAttributes : ProjectAttributes
+    let id: String
+    let attributes : ProjectAttributes
     
-    enum Project: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case relationships
         case type
         case id
-        case projectAttributes = "attributes"
+        case attributes
     }
 }
 
@@ -27,7 +27,7 @@ struct Relationships: Codable {
     
     let team: Team
     
-    enum Relationships: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case team
     }
 }
@@ -37,7 +37,7 @@ struct ProjectAttributes: Codable {
     let updatedAt: String
     let name: String
     
-    enum ProjectAttributes: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         
         case updatedAt = "updated_at"
         case name
