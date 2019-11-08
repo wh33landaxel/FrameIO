@@ -13,6 +13,10 @@ class Projects: UIViewController {
     var projects: [Project] = []
     var teams: [Team] = []
     
+    var teamProjects : [String:[Project]] = [:]
+    var sectionNames : [String] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "PROJECTS"
@@ -40,7 +44,32 @@ class Projects: UIViewController {
                     
                     self.projects[index].relationships.team.attributes = teamDict[self.projects[index].relationships.team.id]?.attributes ?? self.projects[index].relationships.team.attributes
                 }
-                                
+                
+                let dateFormatter = ISO8601DateFormatter()
+                dateFormatter.formatOptions =  [.withInternetDateTime, .withFractionalSeconds]
+
+                self.projects = self.projects.sorted(by: { (project1, project2) -> Bool in
+                    guard let project1UpdateTime = dateFormatter.date(from: project1.attributes.updatedAt),
+                        let project2UpdateTime = dateFormatter.date(from: project2.attributes.updatedAt) else {
+                        return false
+                    }
+
+                    return project1UpdateTime.compare(project2UpdateTime) == .orderedDescending
+                })
+                
+                for project in self.projects {
+                    
+                    guard let teamName = project.relationships.team.attributes?.name else {
+                        continue
+                    }
+                    
+                    if self.teamProjects[teamName] != nil {
+                        self.teamProjects[teamName]?.append(project)
+                    } else {
+                        self.teamProjects[teamName] = [project]
+                    }
+                }
+                
                 DispatchQueue.main.async {
                     self.projectsTableView.reloadData()
                 }
@@ -54,8 +83,10 @@ class Projects: UIViewController {
 }
 
 extension Projects: UITableViewDelegate, UITableViewDataSource {
-      
+        
     func numberOfSections(in tableView: UITableView) -> Int {
+        var sectionCount = 0
+        sectionCount = sectionCount + ((projects.count > 5) ? 1 + self.teams.count : self.teams.count)
         return projects.count > 5 ? 2 : 1
     }
     

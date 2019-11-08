@@ -13,6 +13,7 @@ struct Team: Codable {
     let id: String
     let type: String
     var attributes: Attributes?
+
     
     enum CodingKeys: String, CodingKey {
         case id
